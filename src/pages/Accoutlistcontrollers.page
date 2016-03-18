@@ -1,0 +1,12 @@
+<apex:page standardcontroller="Account" recordsetvar="accounts" tabstyle="account" sidebar="false">
+
+<apex:pageblock title="accountlist" rendered="{!$ObjectType.Account.accessible}">
+  <apex:pageblocktable value="{!accounts}" var="a">
+   <apex:column value="{!a.name}"/>
+   </apex:pageblocktable>
+  </apex:pageblock>
+   <apex:pageblock rendered="NOT({!$ObjectType.Account.accessible})">
+   <P> yOU DONT HAVE ACCESS TO THE ACCOUNTOBJECT. PLEASE CHECK WITH ADMIN </p>
+
+</apex:pageblock>
+</apex:page>

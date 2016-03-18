@@ -1,0 +1,5 @@
+<apex:page >
+<apex:form >
+ <b> HELLO! THIS MY FIRST VISUAL FORCE PAGE  </b>  
+</apex:form>
+</apex:page>

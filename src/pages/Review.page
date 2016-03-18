@@ -1,0 +1,28 @@
+<apex:page standardController="Review__c" tabstyle="Account" sidebar="flase">
+<apex:form >
+<apex:sectionHeader title="Review Edit" subtitle="New Review"/>
+<apex:pageBlock title="Main Detail" mode="edit">
+<apex:pageblockButtons >
+<apex:commandButton action="{!save}" value="Save"/>
+<apex:commandButton action="{!cancel}" value="Cancel"/> 
+</apex:pageblockButtons>
+<apex:pageBlockSection columns="2" Title="Information"> 
+<apex:inputField value="{!Review__c.Interviewer__c}"/>
+ <apex:inputField value="{!Review__c.Recommend_for_Hire__c}"/>
+   <apex:inputField value="{!Review__c.Reason_Recommended__c}"/> 
+   <apex:inputField value="{!Review__c.Legacy_Review_Number__c}"/>
+</apex:pageBlockSection>
+<apex:pageBlockSection columns="1" Title="Scores">
+<apex:inputField value="{!Review__c.Cultural_Comments__c}"/>
+<apex:selectRadio label="Experience" value="{!Review__c.Experience__c}">
+<apex:selectOption itemLabel="Excellent" itemValue="5.0"/> <apex:selectOption itemLabel="Good" itemValue="4.0"/> <apex:selectOption itemLabel="Average" itemValue="3.0"/> <apex:selectOption itemLabel="Fair" itemValue="2.0"/> <apex:selectOption itemLabel="Poor" itemValue="1.0"/>
+</apex:selectRadio>
+<apex:inputField value="{!Review__c.Experience_Comments__c}"/>
+<apex:selectRadio label="Leadership Skills" value="{!Review__c.Leadership_Skills__c}">
+<apex:selectOption itemLabel="Excellent" itemValue="5.0"/> <apex:selectOption itemLabel="Good" itemValue="4.0"/> <apex:selectOption itemLabel="Average" itemValue="3.0"/> <apex:selectOption itemLabel="Fair" itemValue="2.0"/> <apex:selectOption itemLabel="Poor" itemValue="1.0"/>
+</apex:selectRadio>
+</apex:pageBlockSection>
+<apex:inputField value="{!Review__c.Leadership_Comments__c}"/>
+</apex:pageblock>
+</apex:form>
+</apex:page>

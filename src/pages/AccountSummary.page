@@ -1,0 +1,14 @@
+<apex:page standardcontroller="Account">
+     <apex:form >
+        <apex:pageblock title="Account input and output section">
+            <apex:pageBlockSection >
+                <apex:inputfield value="{!Account.name}"/>
+                 <apex:outputfield value="{!Account.phone}"/>
+            </apex:pageBlockSection>
+       
+         
+               <apex:commandbutton action="{!save}" value="save">
+                </apex:commandbutton>
+     </apex:pageblock>
+    </apex:form>
+</apex:page>

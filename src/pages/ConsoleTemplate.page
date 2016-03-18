@@ -1,0 +1,23 @@
+<apex:page >
+    <!--Header portion of page -->
+    <apex:outputPanel layout="none">
+        <apex:insert name="Header"/>
+        <apex:pageMessages />
+    </apex:outputPanel>
+    <!--Console panel portion of page -->
+    <apex:panelGrid Columns="3">
+    <!--Column 1-->
+        <apex:outputPanel >
+        <apex:insert name="Column1"/>
+<!--1. TODO: Add the insert component to name the section "Column1" -->
+        </apex:outputPanel>
+    <!--Column 2-->
+<!--2. TODO: Add an additional column with the name "Column2". Use Column 1 as a model-->
+<apex:insert name="Column2"/>
+    <!--Column 3-->
+<!--3. TODO: Add an additional column with the name "Column3". Use Column 1 as a model-->
+<apex:insert name="Column3"/>
+    </apex:panelGrid>
+    
+    
+</apex:page>

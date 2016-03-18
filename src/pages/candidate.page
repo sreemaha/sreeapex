@@ -1,0 +1,14 @@
+<apex:page standardController="Candidate__c">
+ <apex:pageBlock >
+ <b> Hello {!$User.FirstName} </b>
+ <apex:pageBlockSection >
+ <apex:outputField value="{!Candidate__c.Candidate_Picture__c}" label=" "/>
+ <chatter:feed entityId="{!Candidate__c.id}" rendered="true"/>
+ <apex:detail />
+ <apex:pagemessages />
+ </apex:pageBlockSection>
+ </apex:pageBlock>
+ 
+ 
+  
+</apex:page>

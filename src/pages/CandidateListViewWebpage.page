@@ -1,0 +1,4 @@
+<apex:page >
+<apex:enhancedList height="400" type="Candidate__c" rowsPerPage="10"/>
+<apex:iframe frameborder="true" height="400px" src="https://www.salesforce.com" scrolling="true" id="EmployeeRefer"/>  
+</apex:page>

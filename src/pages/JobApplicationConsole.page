@@ -1,0 +1,89 @@
+<apex:page standardController="Job_Application__c" >
+    <apex:variable value="{!Job_Application__c.Candidate__r}" var="candidate"/>
+    <apex:variable value="{!Job_Application__c.Position__r}" var="position"/> 
+<!--1. TODO: Reference the template using the apex:composition component. -->
+       <apex:composition template="ConsoleTemplate">
+        <apex:define name="Header">
+        <apex:image id="Confidential" value="{!$Resource.confidential}" width="200px"/>
+            <apex:sectionHeader title="{!$ObjectType.Job_Application__c.label} Console" subtitle="{!Job_Application__c.name&' for '&$ObjectType.position__c.label&': '&Job_Application__c.Position__r.name}"/>
+        </apex:define>
+        <apex:define name="Column1">    
+            <apex:form >
+                <apex:pageBlock mode="detail" >
+                    <apex:pageBlockButtons location="top">
+                        <apex:commandButton action="{!edit}" value="Edit"/>
+                        <apex:commandButton action="{!delete}" value="Delete"/>
+                    </apex:pageBlockButtons>
+                    <apex:pageBlockSection columns="1" title="Job Application Information">
+                        <apex:outputField value="{!Job_Application__c.position__c}"/>
+                        <apex:outputField value="{!Job_Application__c.Stage__c}"/>
+                        <apex:outputField value="{!Job_Application__c.name}"/>
+                        <apex:outputField value="{!Job_Application__c.Status__c}"/>
+                       
+<!---                       <apex:outputField value="{!Job_Application__c.Average_Review_Score__c}"/> --->
+ <!---                       <apex:outputField value="{!Job_Application__c.Rating__c}"/>---->
+<!---                        <apex:outputField value="{!Job_Application__c.OwnerId}"/>  ---->
+ <!---                       <apex:outputField value="{!Job_Application__c.CreatedById}"/>  ---->
+                        <apex:pageBlockSectionItem >
+                            <apex:outputLabel value="Last Modified By"/>
+                            <apex:outputText > 
+                                <apex:outputField value="{!Job_Application__c.LastModifiedById}"/>, &nbsp;
+                                <apex:outputField value="{!Job_Application__c.LastModifiedDate}"/>
+                            </apex:outputText>
+                        </apex:pageBlockSectionItem>
+                    </apex:pageBlockSection>
+                </apex:pageBlock>
+            </apex:form>
+        </apex:define>
+<!--2. TODO: define the pageblock below as Column 2 using the Define component.-->
+           <apex:define name="column2">
+            <apex:form >
+                <apex:pageBlock mode="detail" tabStyle="Candidate__c" >
+                    <apex:pageBlockButtons location="top" >
+                        <apex:commandButton value="Edit" action="{!URLFOR($Action.Candidate__c.edit,Job_Application__c.Candidate__c)}"/>
+                    </apex:pageBlockButtons>   
+                    <apex:pageBlockSection columns="1" title="Candidate Information">
+                        <apex:pageBlockSectionItem >
+                            <apex:outputLabel value="Name"/>
+                            <apex:outputText value="{!candidate.First_Name__c} {!candidate.Last_Name__c}"/>
+                        </apex:pageBlockSectionItem>
+                        <apex:outputField value="{!candidate.Street_Address_1__c}"/>
+                        <apex:pageBlockSectionItem >
+                            <apex:outputLabel value="City and State"/>
+                            <apex:outputText value="{!candidate.City__c}, {!candidate.State_Province__c}"/>
+                        </apex:pageBlockSectionItem>
+                        <apex:outputField value="{!candidate.Phone__c}"/>
+                        <apex:outputField value="{!candidate.Mobile__c}"/>
+                        <apex:outputField value="{!candidate.Email__c}"/>
+                        <apex:outputField value="{!candidate.Currently_Employed__c}"/>                    
+                        <apex:outputField value="{!candidate.Current_Employer__c}"/>                                        
+                        <apex:outputField value="{!Job_Application__c.Candidate__c}"/>                    
+                    </apex:pageBlockSection>
+                </apex:pageBlock>                                    
+            </apex:form>
+            </apex:define>
+<!--3. TODO: Add the closing Define component -->
+        <apex:define name="Column3">
+            <apex:form >
+                <apex:pageBlock mode="detail" tabStyle="Position__c" >
+                    <apex:pageBlockButtons location="top" >
+                        <apex:commandButton value="Edit" action="{!URLFOR($Action.Position__c.edit,Job_Application__c.Position__c)}"/>
+                    </apex:pageBlockButtons>   
+                    <apex:pageBlockSection columns="1" title="Position Information">
+                        <apex:outputField value="{!Job_Application__c.position__c}"/>
+ <!-----                       <apex:outputField value="{!position.Department__c}"/>   ---->
+ <!-----                       <apex:outputField value="{!position.Hiring_Manager__c}"/>---->
+ <!----                       <apex:outputField value="{!position.Type__c}"/>     ------>
+ <!-----                       <apex:outputField value="{!position.Location__c}"/>   ------>
+ <!----                       <apex:outputField value="{!position.Pay_Grade__c}"/> ---->
+ <!----                       <apex:outputField value="{!position.date_opened__c}"/>   ----->
+ <!----                       <apex:outputField value="{!position.Priority__c}"/>   ------>
+ <!----                       <apex:outputField value="{!position.status__c}"/>   ------>
+ <!-----                       <apex:outputField value="{!position.sub_status__c}"/>   ------->
+                    </apex:pageBlockSection>
+                </apex:pageBlock>                                             
+            </apex:form>
+        </apex:define>
+<!--4. TODO: Add the closing Composition component -->
+</apex:composition>
+</apex:page>

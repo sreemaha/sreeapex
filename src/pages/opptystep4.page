@@ -1,0 +1,5 @@
+<apex:page controller="newOpportunityController">
+   
+   <apex:sectionHeader title=" ****you succesfully save the opportunity details!*****"/>
+   
+</apex:page>

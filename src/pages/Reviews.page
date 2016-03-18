@@ -1,0 +1,18 @@
+<apex:page standardController="Review__c" >
+<apex:form >
+<apex:pageBlock title="Score Description" mode="edit" >
+<apex:selectRadio label="Experience" value="{!Review__c.Experience__c}">
+<apex:selectOption itemLabel="Excellent" itemValue="5.0"> </apex:selectOption>
+<apex:selectOption itemLabel="Good" itemValue="4.0"></apex:selectOption>
+<apex:selectOption itemLabel="Average" itemValue="3.0"></apex:selectOption>
+<apex:selectOption itemLabel="Fiar" itemValue="2.0"></apex:selectOption>
+<apex:selectOption itemLabel="Poor" itemValue="1.0"></apex:selectOption>
+</apex:selectRadio> <br>  </br>
+<apex:commandButton >
+<apex:commandButton value="save" action="{!save}"/>
+<apex:commandButton value="cancel" action="{!cancel}"/>
+</apex:commandButton>
+</apex:pageBlock>
+<apex:detail />
+</apex:form>  
+</apex:page>

@@ -1,0 +1,4 @@
+<apex:page sidebar="false">
+
+  <flow:interview name="Candiate_Wizard" finishLocation="{!URLFOR('/home/home.jsp')}"/>
+  </apex:page>

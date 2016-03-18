@@ -1,0 +1,24 @@
+<apex:page standardController="User" >
+ &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<h1> ACCOUNT  PAGE  </h1>
+<apex:form >
+<apex:pageBlock >
+<apex:pageBlockSection >
+  
+   <b> view or create your accounts here </b> <br/>
+</apex:pageBlockSection>
+<apex:pageBlockSection > 
+<apex:inputField value="{!User.Name}"/> <br/>
+</apex:pageBlockSection>
+<apex:pageBlockSection >
+<apex:inputField value="{!User.Phone}"/>
+</apex:pageBlockSection>
+<apex:pageBlockSection >
+<apex:inputField value="{!User.Email}"/>
+</apex:pageBlockSection>
+<apex:pageBlockButtons >
+<apex:commandButton value="Save" action="{!Save}"/>
+<apex:commandButton value="Cancel" action="{!cancel}"/>
+</apex:pageBlockButtons>
+</apex:pageBlock>
+</apex:form>
+</apex:page>
